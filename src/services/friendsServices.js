@@ -12,9 +12,10 @@ export function getFriend(id = "id") {
 }
 
 export async function getPhotos(photosUrl) {
-  const photos = [];
-  for (let photo of photosUrl) {
-    photos.push(await getFlickrPhoto(photo));
-  }
+  const photos = await Promise.all(
+    photosUrl.map(async (url) => {
+      return await getFlickrPhoto(url);
+    })
+  );
   return photos;
 }

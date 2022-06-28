@@ -34,9 +34,7 @@ function FriendsAppContainer() {
     const { data: friend } = await getFriend();
     setFriendDetails(friend);
 
-    //calling the photos api
-    const data = await getPhotos(friendDetails.photos);
-    setPhotos(data);
+    setShowDetails(true);
 
     //Providing context for status, since the api for details
     //does not provide the current status
@@ -46,7 +44,9 @@ function FriendsAppContainer() {
     }).status;
     setStatus(currentStatus);
 
-    setShowDetails(true);
+    //calling the photos api
+    const data = await getPhotos(friend.photos);
+    setPhotos(data);
   };
 
   const handleGoBack = () => {
