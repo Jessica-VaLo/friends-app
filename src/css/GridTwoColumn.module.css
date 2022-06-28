@@ -1,0 +1,8 @@
+.info__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.info__grid__item2 {
+  padding-left: 2rem;
+}

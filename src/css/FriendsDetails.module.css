@@ -17,3 +17,10 @@
   left: -8rem;
   top: 0;
 }
+
+.details__tab {
+  background-color: #fff;
+  box-shadow: 0px 10px 20px 0px #ccd0df80;
+  border-radius: 0.8rem;
+  padding: 2rem;
+}

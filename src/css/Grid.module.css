@@ -1,0 +1,14 @@
+.info__grid__text {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 2.4rem;
+  margin: 0;
+}
+
+.info__grid__text--gray {
+  color: #b1b9db;
+}
+
+.info__grid__text--thiner {
+  font-weight: 400;
+}

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import FriendProfile from "./FriendProfile";
 import styles from "../css/FriendsDetails.module.css";
 import Tabs from "../common/Tabs";
+import DetailsInfo from "./DetailsInfo";
 
 function FriendsDetails({ friend, onGoBack }) {
   const [itemSelected, setItemSelected] = useState("info");
@@ -18,6 +19,9 @@ function FriendsDetails({ friend, onGoBack }) {
       </button>
       <FriendProfile sizeSm={false} friend={friend} />
       <Tabs itemSelected={itemSelected} onSelect={handleSelect} />
+      <div className={styles.details__tab}>
+        <DetailsInfo info={friend} />
+      </div>
     </div>
   );
 }

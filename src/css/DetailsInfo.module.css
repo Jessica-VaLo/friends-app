@@ -1,0 +1,25 @@
+.info {
+  margin: 0.8rem;
+}
+
+.info__item {
+  padding: 2.8rem 0;
+  border-bottom: 1px solid #b1b9db80;
+}
+
+.info__item:first-child {
+  padding-top: 0;
+}
+
+.info__item:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.info__item--sm {
+  padding-bottom: 1.4rem;
+}
+
+.info__item--sm:last-child {
+  padding-bottom: 0;
+}
