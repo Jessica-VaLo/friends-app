@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import friends from "../friendsData.json";
 import friend from "../friendDetails.json";
+import photos from "../photosFriends.json";
 import styles from "../css/FriendsAppContainer.module.css";
 import FriendsList from "./FriendsList";
 import FriendsDetails from "./FriendsDetails";
@@ -24,7 +25,11 @@ function FriendsAppContainer() {
         <FriendsList friends={friends} onShowDetails={handleShowDetails} />
       )}
       {showDetails && (
-        <FriendsDetails friend={friend} onGoBack={handleGoBack} />
+        <FriendsDetails
+          friend={friend}
+          photos={photos.photos}
+          onGoBack={handleGoBack}
+        />
       )}
     </div>
   );

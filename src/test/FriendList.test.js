@@ -1,12 +1,12 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import FriendsListContainer from "./../component/FriendsListContainer";
+import FriendsList from "./../component/FriendsList";
 
 describe("Friend List Container", () => {
   test("Checking renderization of its childrens", () => {
     const friendsMock = [{ first_name: "Jeremy", last_name: "Davis" }];
 
-    render(<FriendsListContainer friends={friendsMock} />);
+    render(<FriendsList friends={friendsMock} />);
     const el = screen.getByText(/Friends/i);
     const el1 = screen.getByText(/Davis/i);
     const el2 = screen.getByText(/Details/i);
@@ -21,7 +21,7 @@ describe("Friend List Container", () => {
     const handleShowDetailsMock = jest.fn();
 
     render(
-      <FriendsListContainer
+      <FriendsList
         friends={friendsMock}
         onShowDetails={handleShowDetailsMock}
       />
