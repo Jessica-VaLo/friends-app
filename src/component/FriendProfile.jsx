@@ -6,9 +6,10 @@ import bg from "../css/FriendProfileBg.module.css";
 
 //This component will be used with two different styles layout
 //for that reason need to choose wich size needs to be displayed
-//choose sizeSm : true for small version or sizeSm : false for bigger version
+//choose sizeSm : true for small version (default behavior)
+//or sizeSm : false for bigger version
 
-function FriendProfile({ friend, sizeSm }) {
+function FriendProfile({ friend, sizeSm = true }) {
   const propStyles = sizeSm ? sm : bg;
 
   const available = friend.available
