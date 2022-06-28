@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import photos from "../photosFriends.json";
+import StatusContext from "../context/statusContext";
 import styles from "../css/FriendProfile.module.css";
 import sm from "../css/FriendProfileSm.module.css";
 import bg from "../css/FriendProfileBg.module.css";
@@ -10,6 +11,7 @@ import bg from "../css/FriendProfileBg.module.css";
 //or sizeSm : false for bigger version
 
 function FriendProfile({ friend, sizeSm = true }) {
+  const currentStatus = useContext(StatusContext);
   const propStyles = sizeSm ? sm : bg;
 
   const available = friend.available
@@ -31,7 +33,9 @@ function FriendProfile({ friend, sizeSm = true }) {
         <h2 className={propStyles.profile__name}>
           {friend.first_name} {friend.last_name}
         </h2>
-        <span className={styles.profile__badge}>{friend.status}</span>
+        <span className={styles.profile__badge}>
+          {friend.status || currentStatus}
+        </span>
       </div>
     </div>
   );

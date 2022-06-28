@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 // import photos from "../photosFriends.json";
 import FriendsList from "./FriendsList";
 import FriendsDetails from "./FriendsDetails";
+import StatusContext from "./../context/statusContext";
 import { getFriend, getFriends } from "../services/friendsServices";
 import { getPhotos } from "../services/friendsServices";
 import styles from "../css/FriendsAppContainer.module.css";
@@ -13,6 +14,7 @@ function FriendsAppContainer() {
   const [friends, setFriends] = useState([]);
   const [friendDetails, setFriendDetails] = useState();
   const [photos, setPhotos] = useState([]);
+  const [status, setStatus] = useState();
 
   useEffect(() => {
     async function getData() {
@@ -36,6 +38,14 @@ function FriendsAppContainer() {
     const data = await getPhotos(friendDetails.photos);
     setPhotos(data);
 
+    //Providing context for status, since the api for details
+    //does not provide the current status
+    id = 6; //setting id to the only detail providen
+    const currentStatus = friends.find((friend) => {
+      return friend.id === id;
+    }).status;
+    setStatus(currentStatus);
+
     setShowDetails(true);
   };
 
@@ -45,18 +55,20 @@ function FriendsAppContainer() {
   };
 
   return (
-    <div className={styles.container}>
-      {!showDetails && (
-        <FriendsList friends={friends} onShowDetails={handleShowDetails} />
-      )}
-      {showDetails && (
-        <FriendsDetails
-          friend={friendDetails}
-          photos={photos}
-          onGoBack={handleGoBack}
-        />
-      )}
-    </div>
+    <StatusContext.Provider value={status}>
+      <div className={styles.container}>
+        {!showDetails && (
+          <FriendsList friends={friends} onShowDetails={handleShowDetails} />
+        )}
+        {showDetails && (
+          <FriendsDetails
+            friend={friendDetails}
+            photos={photos}
+            onGoBack={handleGoBack}
+          />
+        )}
+      </div>
+    </StatusContext.Provider>
   );
 }
 
