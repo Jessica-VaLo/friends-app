@@ -1,0 +1,30 @@
+.profile__layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile__available {
+  left: -0.9rem;
+  top: -0.9rem;
+  width: 2.3rem;
+  height: 2.3rem;
+  border: 0.4rem solid #fff;
+}
+
+.profile__photo {
+  border-radius: 0.4rem;
+  width: 15rem;
+  height: 15rem;
+  object-fit: cover;
+}
+
+.profile__text {
+  margin-top: 2.3rem;
+}
+
+.profile__name {
+  margin: 0;
+  margin-bottom: 1rem;
+  font-size: 2.6rem;
+  font-weight: 700;
+}

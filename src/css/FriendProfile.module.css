@@ -1,0 +1,27 @@
+.profile__image {
+  position: relative;
+}
+
+.profile__available {
+  border-radius: 50%;
+  position: absolute;
+}
+
+.profile__available--true {
+  background-color: #16ba44;
+}
+
+.profile__available--false {
+  background-color: #b1b9db;
+}
+
+.profile__badge {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 2.4rem;
+  color: #b1b9db;
+  padding: 0 0.8rem;
+  border: 1px solid #b1b9db;
+  border-radius: 2rem;
+}
