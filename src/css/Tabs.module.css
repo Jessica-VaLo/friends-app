@@ -1,0 +1,28 @@
+.tabs {
+  padding: 0;
+  margin-top: 3rem;
+}
+
+.tabs__item {
+  display: inline-block;
+  margin-left: 1rem;
+}
+
+.tabs__link {
+  border: none;
+  padding: 0;
+  width: 6.5rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 2.4rem;
+  color: #5c5f6b;
+}
+
+.tabs__link--active {
+  color: #000;
+  border-bottom: 2px solid #000;
+}
+
+.tabs__link:hover {
+  cursor: pointer;
+}
