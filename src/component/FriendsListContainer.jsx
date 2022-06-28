@@ -1,6 +1,5 @@
 import React from "react";
-import FriendProfile from "./FriendProfile";
-import profileStyles from "../css/FriendProfileSm.module.css";
+import FriendCard from "./FriendCard";
 import styles from "../css/FriendsListContainer.module.css";
 
 function FriendsListContainer({ friends, onShowDetails }) {
@@ -11,19 +10,11 @@ function FriendsListContainer({ friends, onShowDetails }) {
       </div>
       <div className={styles.list__container}>
         {friends.map((friend) => (
-          <div className={styles.list__card}>
-            <FriendProfile
-              key={`${friend.id}+${friend.first_name}`}
-              propStyles={profileStyles}
-              friend={friend}
-            />
-            <button
-              className={styles.list__card__button}
-              onClick={() => onShowDetails(friend.id)}
-            >
-              Details
-            </button>
-          </div>
+          <FriendCard
+            key={`FriendCard+${friend.id}`}
+            friend={friend}
+            onShowDetails={onShowDetails}
+          />
         ))}
       </div>
     </div>
