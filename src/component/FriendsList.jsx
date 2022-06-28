@@ -1,6 +1,6 @@
 import React from "react";
 import FriendCard from "./FriendCard";
-import styles from "../css/FriendsListContainer.module.css";
+import styles from "../css/FriendsList.module.css";
 
 function FriendsListContainer({ friends, onShowDetails }) {
   return (

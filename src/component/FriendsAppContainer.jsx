@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import friends from "../friendsData.json";
 import friend from "../friendDetails.json";
 import styles from "../css/FriendsAppContainer.module.css";
-import FriendsListContainer from "./FriendsListContainer";
+import FriendsList from "./FriendsList";
 import FriendsDetails from "./FriendsDetails";
 
 function FriendsAppContainer() {
@@ -21,10 +21,7 @@ function FriendsAppContainer() {
   return (
     <div className={styles.container}>
       {!showDetails && (
-        <FriendsListContainer
-          friends={friends}
-          onShowDetails={handleShowDetails}
-        />
+        <FriendsList friends={friends} onShowDetails={handleShowDetails} />
       )}
       {showDetails && (
         <FriendsDetails friend={friend} onGoBack={handleGoBack} />
