@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import photos from "../photosFriends.json";
+
 import PhotoGallery from "../common/PhotoGallery";
 import Popup from "../common/Popup";
 
-function DetailsPhotos() {
+function DetailsPhotos({ photos }) {
   const [zoom, setZoom] = useState(false);
   const [photo, setPhoto] = useState();
 
@@ -20,7 +20,7 @@ function DetailsPhotos() {
 
   return (
     <React.Fragment>
-      <PhotoGallery photos={photos.photos} onZoom={handleZoom} />
+      <PhotoGallery photos={photos} onZoom={handleZoom} />
       {zoom && <Popup source={photo} onClose={handleClose} />}
     </React.Fragment>
   );
