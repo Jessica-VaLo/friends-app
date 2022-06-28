@@ -1,13 +1,18 @@
 import React from "react";
-import FriendProfile from "./FriendProfile";
-import friend from "../friendDetails.json";
-import profileStyles from "../css/FriendProfileBg.module.css";
+import friends from "../friendsData.json";
 import styles from "../css/FriendsAppContainer.module.css";
+import FriendsListContainer from "./FriendsListContainer";
 
 function FriendsAppContainer() {
+  const handleShowDetails = () => {
+    console.log("Show details");
+  };
   return (
     <div className={styles.container}>
-      <FriendProfile friend={friend} propStyles={profileStyles} />
+      <FriendsListContainer
+        friends={friends}
+        onShowDetails={handleShowDetails}
+      />
     </div>
   );
 }
