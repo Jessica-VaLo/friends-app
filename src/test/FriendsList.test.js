@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import FriendsList from "./../component/FriendsList";
+import FriendsList from "../component/FriendsList";
 
 describe("Friend List Container", () => {
   test("Checking renderization of its childrens", () => {

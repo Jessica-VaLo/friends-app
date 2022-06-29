@@ -2,7 +2,7 @@ import React from "react";
 import FriendCard from "./FriendCard";
 import styles from "../css/FriendsList.module.css";
 
-function FriendsListContainer({ friends, onShowDetails }) {
+function FriendsList({ friends, onShowDetails }) {
   return (
     <div className={styles.list}>
       <div className={styles.list__title}>
@@ -21,4 +21,4 @@ function FriendsListContainer({ friends, onShowDetails }) {
   );
 }
 
-export default FriendsListContainer;
+export default FriendsList;
