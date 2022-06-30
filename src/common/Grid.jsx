@@ -3,8 +3,8 @@ import styles from "../css/Grid.module.css";
 import column from "../css/GridTwoColumn.module.css";
 import row from "../css/GridTwoRow.module.css";
 
-//This grid will be used with different styles layout
-//for that reason need to choose wich layout needs to be displayed
+//This grid component will be used with different styles layout
+//for that reason need to choose which layout needs to be displayed
 //choose grid : true for a 2 column grid (default behavior)
 //or grid : false for a 2 row grid
 

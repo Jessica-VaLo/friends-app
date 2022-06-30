@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import photos from "../photosFriends.json";
+import photos from "../photosFriends.json"; //importing this file snce the api is not working
 import StatusContext from "../context/statusContext";
 import styles from "../css/FriendProfile.module.css";
 import sm from "../css/FriendProfileSm.module.css";
@@ -8,7 +8,7 @@ import bg from "../css/FriendProfileBg.module.css";
 //This component will be used with two different styles layout
 //for that reason need to choose wich size needs to be displayed
 //choose sizeSm : true for small version (default behavior)
-//or sizeSm : false for bigger version
+//or sizeSm : false for a bigger version
 
 function FriendProfile({ friend, sizeSm = true }) {
   const currentStatus = useContext(StatusContext);

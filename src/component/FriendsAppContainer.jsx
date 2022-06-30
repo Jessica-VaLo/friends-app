@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import friends from "../friendsData.json";
-// import friend from "../friendDetails.json";
-// import photos from "../photosFriends.json";
 import FriendsList from "./FriendsList";
 import FriendsDetails from "./FriendsDetails";
 import StatusContext from "./../context/statusContext";
